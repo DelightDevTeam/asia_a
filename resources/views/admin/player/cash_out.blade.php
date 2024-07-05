@@ -70,7 +70,7 @@
       <h4 class="ms-3">Player Information </h4>
         <div class="table-responsive">
         <table class="table align-items-center mb-0">
-            <tbody>
+            {{-- <tbody>
               <tr>
                 <th>User Name</th>
                 <td>{!! $player->name ?? "" !!}</td>
@@ -91,7 +91,31 @@
                 <th>Bank Account</th>
                 <td>{!! $player->bank_account !!}</td>
               </tr>
-            </tbody>
+            </tbody> --}}
+            <tbody>
+    <tr>
+        <th>User Name</th>
+        <td>{!! $player->name ?? "" !!}</td>
+    </tr>
+    <tr>
+        <th>Phone</th>
+        <td>{!! $player->phone !!}</td>
+    </tr>
+    @foreach($player->userPayments as $userPayment)
+        <tr>
+            <th>Bank Name</th>
+            <td>{!! $userPayment->paymentType->name ?? 'N/A' !!}</td>
+        </tr>
+        <tr>
+            <th>Bank Account Name</th>
+            <td>{!! $userPayment->account_name !!}</td>
+        </tr>
+        <tr>
+            <th>Bank Account</th>
+            <td>{!! $userPayment->account_no !!}</td>
+        </tr>
+    @endforeach
+</tbody>
           </table>
         </div>
       </div>

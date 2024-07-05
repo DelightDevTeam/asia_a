@@ -15,7 +15,7 @@ class UserPayment extends Model
     {
         return $this->belongsTo(PaymentType::class);
     }
-
+    
     public function user()
     {
         return $this->belongsToMany(User::class);

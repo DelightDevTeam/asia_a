@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class PaymentType extends Model
 {
@@ -21,5 +22,10 @@ class PaymentType extends Model
     public function paymentImages()
     {
         return $this->hasMany(PaymentImage::class, 'payment_type_id');
+    }
+
+    public function userPayments(): HasMany
+    {
+        return $this->hasMany(UserPayment::class);
     }
 }
