@@ -13,8 +13,8 @@
 }
 </style>
 <!-- DataTables CSS -->
-{{-- <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet"> --}}
-<link rel="stylesheet" href="{{ asset('admin_app/assets/css/dataTables.bootstrap5.min.css')}}">
+<link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+{{-- <link rel="stylesheet" href="{{ asset('admin_app/assets/css/dataTables.bootstrap5.min.css')}}"> --}}
 @endsection
 
 @section('content')
