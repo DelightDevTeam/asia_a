@@ -13,7 +13,8 @@
 }
 </style>
 <!-- DataTables CSS -->
-<link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+{{-- <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet"> --}}
+<link rel="stylesheet" href="{{ asset('admin_app/assets/css/dataTables.bootstrap5.min.css')}}">
 @endsection
 
 @section('content')
@@ -67,10 +68,13 @@
 
 @section('scripts')
 <!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+<script src="{{ asset('admin_app/assets/js/jquery.min.js')}}"></script>
 <!-- DataTables JS -->
-<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+{{-- <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script> --}}
+<script src="{{ asset('admin_app/assets/js/dataTables.bootstrap5.min.js')}}"></script>
+<script src="{{ asset('admin_app/assets/js/jquery.dataTables.min.js')}}"></script>
 <script>
 $(document).ready(function() {
     $('#users-search').DataTable({
