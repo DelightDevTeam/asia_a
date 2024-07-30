@@ -60,7 +60,7 @@ class AgentController extends Controller
         $referral_code = $this->generateReferralCode();
 
 
-        return view('admin.agent.create', compact('agent_name'));
+        return view('admin.agent.create', compact('agent_name', 'referral_code'));
     }
 
     /**
