@@ -143,4 +143,11 @@ class AuthController extends Controller
             return $this->error('', 'Not Found Agent', 401);
         }
     }
+
+    private function generateRandomString()
+    {
+        $randomNumber = mt_rand(10000000, 99999999);
+
+        return 'P'.$randomNumber;
+    }
 }
