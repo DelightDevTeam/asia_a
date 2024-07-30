@@ -138,7 +138,7 @@ class AuthController extends Controller
             $player = User::create($userPrepare);
             $player->roles()->sync(self::PLAYER_ROLE);
 
-            return $this->success(new RegisterResource($player), 'User register successfully.');
+            return $this->success(new UserResource($player), 'User register successfully.');
         }else{
             return $this->error('', 'Not Found Agent', 401);
         }
