@@ -27,6 +27,8 @@ class AgentRequest extends FormRequest
             'phone' => ['nullable', 'regex:/^([0-9\s\-\+\(\)]*)$/'],
             'password' => 'required|min:6',
             'amount' => 'nullable|numeric',
+            'referral_code' => ['required', 'string', 'unique:users,referral_code']
+
         ];
     }
 }

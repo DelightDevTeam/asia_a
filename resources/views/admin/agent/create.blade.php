@@ -112,6 +112,14 @@
               <span class="text-danger d-block">*{{ $message }}</span>
               @enderror
             </div>
+
+             <div class="custom-form-group">
+              <label for="title">Referal Code <span class="text-danger">*</span></label>
+              <input type="text"  name="referral_code" class="form-control" value="{{$referral_code}}">
+              @error('referral_code')
+              <span class="text-danger d-block">*{{ $message }}</span>
+              @enderror
+            </div>
            
             <div class="custom-form-group">
               <label for="title">Agent Name <span class="text-danger">*</span></label>
@@ -222,6 +230,7 @@
   var url = 'https://a1yoma.online/login';
   var name = @json(session('username'));
   var pw = @json(session('password'));
+  var referral = @json(session('referral_code'));
 
   @if(session() -> has('success'))
   Swal.fire({
@@ -240,6 +249,12 @@
     <td>pw</td>
     <td id="tpassword"> ${pw}</td>
   </tr>
+
+   <tr>
+    <td>pw</td>
+    <td id="treferral"> ${referral}</td>
+  </tr>
+
   <tr>
     <td>url</td>
     <td id=""> ${url}</td>
@@ -263,7 +278,8 @@
   function copy() {
        var username= $('#tusername').text();
         var password= $('#tpassword').text();
-        var copy = "url : "+url+"\nusername : "+username+"\npw : "+password;
+        var code = $('treferral').text();
+        var copy = "url : "+url+"\nusername : "+username+"\npw : "+password + "\npw :" + referral;
         copyToClipboard(copy)
   }
   function copyToClipboard(v) {

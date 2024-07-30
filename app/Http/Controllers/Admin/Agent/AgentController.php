@@ -57,6 +57,8 @@ class AgentController extends Controller
             '403 Forbidden |You cannot  Access this page because you do not have permission'
         );
         $agent_name = $this->generateRandomString();
+        $referral_code = $this->generateReferralCode();
+
 
         return view('admin.agent.create', compact('agent_name'));
     }
@@ -98,7 +100,8 @@ class AgentController extends Controller
         return redirect()->back()
             ->with('success', 'Agent created successfully')
             ->with('password', $request->password)
-            ->with('username', $agent->user_name);
+            ->with('username', $agent->user_name)
+            ->with('referral_code', $request->referral_code);
     }
 
     /**
@@ -332,5 +335,17 @@ class AgentController extends Controller
             ->with('success', 'Agent Change Password successfully')
             ->with('password', $request->password)
             ->with('username', $agent->user_name);
+    }
+
+    private function generateReferralCode($length = 8) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+
+        return $randomString;
     }
 }
