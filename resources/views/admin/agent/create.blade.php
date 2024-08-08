@@ -113,14 +113,14 @@
               @enderror
             </div>
 
-             <div class="custom-form-group">
+             {{-- <div class="custom-form-group">
               <label for="title">Referal Code <span class="text-danger">*</span></label>
               <input type="text"  name="referral_code" class="form-control" value="{{$referral_code}}">
               @error('referral_code')
               <span class="text-danger d-block">*{{ $message }}</span>
               @enderror
             </div>
-           
+            --}}
             <div class="custom-form-group">
               <label for="title">Agent Name <span class="text-danger">*</span></label>
               <input type="text"  name="name" class="form-control" value="{{old('name')}}" placeholder="Enter Agent Name">
@@ -250,10 +250,7 @@
     <td id="tpassword"> ${pw}</td>
   </tr>
 
-   <tr>
-    <td>pw</td>
-    <td id="treferral"> ${referral}</td>
-  </tr>
+   
 
   <tr>
     <td>url</td>
@@ -279,7 +276,7 @@
        var username= $('#tusername').text();
         var password= $('#tpassword').text();
         var code = $('treferral').text();
-        var copy = "url : "+url+"\nusername : "+username+"\npw : "+password + "\npw :" + referral;
+        var copy = "url : "+url+"\nusername : "+username+"\npw : "+password ;
         copyToClipboard(copy)
   }
   function copyToClipboard(v) {
