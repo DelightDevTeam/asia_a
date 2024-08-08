@@ -100,8 +100,8 @@ class AgentController extends Controller
         return redirect()->back()
             ->with('success', 'Agent created successfully')
             ->with('password', $request->password)
-            ->with('username', $agent->user_name)
-            ->with('referral_code', $request->referral_code);
+            ->with('username', $agent->user_name);
+            //->with('referral_code', $request->referral_code);
     }
 
     /**
