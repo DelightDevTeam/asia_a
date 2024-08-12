@@ -9,24 +9,9 @@ use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
 class GameListController extends Controller
 {
-    //     public function index()
-    // {
-    //     // Eager load game type and product relationships
-    //     $games = GameList::with(['gameType', 'product'])->get();
-
-    //     return view('admin.game_list.index', compact('games'));
-    // }
-
-    // public function index()
-    // {
-    //     // Eager load game type and product relationships and paginate the results
-    //     $games = GameList::with(['gameType', 'product'])->paginate(7); // Adjust the number as needed
-
-    //     return view('admin.game_list.index', compact('games'));
-    // }
     public function index(Request $request)
     {
-        $games = GameList::with(['gameType', 'product'])->get();
+        $games = GameList::with(['gameType', 'product'])->count();
         if ($request->ajax()) {
             $data = GameList::with(['gameType', 'product']);
             return Datatables::of($data)
@@ -38,25 +23,26 @@ class GameListController extends Controller
                     return $row->product->name ?? 'N/A';
                 })
                 ->addColumn('status', function ($row) {
-                    return $row->status == 1 ? 'Running Game' : 'Game is Closed';
+                    return $row->status == 1 ? 'Open' : 'Closed';
                 })
                 ->addColumn('hot_status', function ($row) {
-                    return $row->hot_status == 1 ? 'This Game is Hot' : 'Game is Normal';
+                    return $row->hot_status == 1 ? '<span class="badge text-bg-success text-white mb-2">HotGame</span>' :
+                             '<span class="badge text-bg-warning text-white mb-2">NormalGame</span>';
                 })
                 ->addColumn('action', function ($row) {
                     $btn = '<form action="' . route('admin.gameLists.toggleStatus', $row->id) . '" method="POST" style="display:inline;">
                                 ' . csrf_field() . '
                                 ' . method_field('PATCH') . '
-                                <button type="submit" class="btn btn-warning btn-sm">GameStatus</button>
+                                <button type="submit" class="btn btn-warning ">ChangeGameStatus</button>
                             </form>';
                     $btn .= '<form action="' . route('admin.HotGame.toggleStatus', $row->id) . '" method="POST" style="display:inline;">
                                 ' . csrf_field() . '
                                 ' . method_field('PATCH') . '
-                                <button type="submit" class="btn btn-success btn-sm">HotGame</button>
+                                <button type="submit" class="btn btn-success">ChangeGameType</button>
                             </form>';
                     return $btn;
                 })
-                ->rawColumns(['action'])
+                ->rawColumns(['action', 'hot_status'])
                 ->make(true);
         }
 

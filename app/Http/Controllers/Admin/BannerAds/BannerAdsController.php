@@ -95,14 +95,16 @@ class BannerAdsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(BannerAds $banner)
+    public function destroy(int $adsbanner)
     {
-        if (! $banner) {
+        $adsbanner = BannerAds::find($adsbanner);
+
+        if (! $adsbanner) {
             return redirect()->back()->with('error', 'Banner Not Found');
         }
         //remove banner from localstorage
-        File::delete(public_path('assets/img/banners_ads/'.$banner->image));
-        $banner->delete();
+        File::delete(public_path('assets/img/banners_ads/'.$adsbanner->image));
+        $adsbanner->delete();
 
         return redirect()->back()->with('success', 'Ads Banner Deleted.');
     }

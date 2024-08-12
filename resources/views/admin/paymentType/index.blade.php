@@ -36,7 +36,6 @@
               <th>ID</th>
               <th>Name</th>
               <th>Image</th>
-              <th>Banner</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -50,14 +49,6 @@
                     <img src="{{ asset('assets/img/paymentType/' . ($type->paymentType->image ?? 'default.png')) }}" alt="" width="100px">
                 </td>
                 <td>
-                    @foreach ($type->paymentImages ?? [] as $payment)
-                        <img src="{{ asset('assets/img/paymentType/banners/' . ($payment->image ?? 'default.png')) }}" alt="" width="100px">
-                    @endforeach
-                </td>
-                <td>
-                    <a href="{{ route('admin.paymentType.edit', $type->id) }}" data-bs-toggle="tooltip" data-bs-original-title="Edit Bank">
-                        <i class="material-icons-round text-secondary position-relative text-lg">mode_edit</i>
-                    </a>
                     <form class="d-inline" action="{{ route('admin.paymentType.destroy', $type->id) }}" method="POST">
                         @csrf
                         @method('DELETE')

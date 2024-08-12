@@ -111,7 +111,7 @@
       @csrf
   <div class="row">
     <div class="col-md-6">
-      <div class="input-group input-group-outline is-valid my-3">
+    <div class="custom-form-group">
         <label class="form-label">Name</label>
         <input type="text" class="form-control" name="name" value="{{ $agent->name }}" readonly>
 
@@ -121,7 +121,7 @@
         @enderror
     </div>
     <div class="col-md-6">
-      <div class="input-group input-group-outline is-valid my-3">
+    <div class="custom-form-group">
         <label class="form-label">Current Balance</label>
         <input type="text" class="form-control" name="blance" value="{{ $agent->balanceFloat}}" readonly>
 
@@ -134,7 +134,7 @@
   <input type="hidden" name="from_user_id" value="{{ Auth::id() }}">
   <div class="row">
     <div class="col-md-6">
-      <div class="input-group input-group-outline is-valid my-3">
+    <div class="custom-form-group">
         <label class="form-label">Amount</label>
         <input type="text" class="form-control" name="amount" required>
       </div>
@@ -143,7 +143,7 @@
         @enderror
     </div>
     <div class="col-md-6">
-      <div class="input-group input-group-outline is-valid my-3">
+    <div class="custom-form-group">
         <label class="form-label">Addition Note (optional)</label>
         <input type="text" class="form-control" name="note">
 

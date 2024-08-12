@@ -64,7 +64,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($transferLogs as $log)
+          @foreach($transferLogs as $log)
             <tr>
               <td>
                 {{ $log->created_at }}

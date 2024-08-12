@@ -27,8 +27,9 @@
           </div>
           <div class="ms-auto my-auto mt-lg-0 mt-4">
             <div class="ms-auto my-auto">
+              @if(!$text)
               <a href="{{ route('admin.text.create') }}" class="btn bg-gradient-primary btn-sm mb-0">+&nbsp; New Banner Text</a>
-              <button class="btn btn-outline-primary btn-sm export mb-0 mt-sm-0 mt-1" data-type="csv" type="button" name="button">Export</button>
+              @endif
             </div>
           </div>
         </div>
@@ -44,9 +45,8 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($texts as $key => $text)
             <tr>
-              <td class="text-sm font-weight-normal">{{ ++$key }}</td>
+              <td class="text-sm font-weight-normal">{{ $text->id }}</td>
               <td>{{ $text->text }}</td>
               <td class="text-sm font-weight-normal">{{ $text->created_at->format('M j, Y') }}</td>
               <td>
@@ -63,7 +63,6 @@
                 </form>
               </td>
             </tr>
-            @endforeach
           </tbody>
         </table>
       </div>

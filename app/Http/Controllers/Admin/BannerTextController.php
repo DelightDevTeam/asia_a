@@ -13,9 +13,9 @@ class BannerTextController extends Controller
      */
     public function index()
     {
-        $texts = BannerText::latest()->get();
+        $text = BannerText::latest()->first();
 
-        return view('admin.banner_text.index', compact('texts'));
+        return view('admin.banner_text.index', compact('text'));
     }
 
     /**

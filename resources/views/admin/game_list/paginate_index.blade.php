@@ -28,7 +28,7 @@
                         <h5 class="mb-0">Game List Dashboards
                             <span>
                                 <p>
-                                    All Total Running Games on Site: {{ count($games) }}
+                                    All Total Running Games on Site: {{ $games }}
                                 </p>
                             </span>
                         </h5>
@@ -52,7 +52,7 @@
                             <th class="bg-info text-white">Game Name</th>
                             <th class="bg-warning text-white">Image</th>
                             <th class="bg-success text-white">Status</th>
-                            <th class="bg-info text-white">Hot Status</th>
+                            <th class="bg-info text-white">Type</th>
                             <th class="bg-warning text-white">Actions</th>
                         </tr>
                     </thead>

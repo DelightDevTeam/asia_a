@@ -38,7 +38,7 @@ class DepositRequestController extends Controller
         try {
             $agent = Auth::user();
             $player = User::find($request->player);
-            if ($agent->balance < $request->amount) {
+            if ($agent->balance < $deposit->amount) {
                 return redirect()->back()->with('error', 'You do not have enough balance to transfer!');
             }
 

@@ -116,8 +116,8 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div class="input-group input-group-outline is-valid my-3">
-        <label class="form-label"> Name</label>
+    <div class="custom-form-group">        
+      <label class="form-label"> Name</label>
         <input type="text" class="form-control" name="name" value="{{ $master->name }}" readonly>
 
       </div>
@@ -126,8 +126,8 @@
         @enderror
     </div>
     <div class="col-md-6">
-      <div class="input-group input-group-outline is-valid my-3">
-        <label class="form-label">Current Balance</label>
+    <div class="custom-form-group">        
+      <label class="form-label">Current Balance</label>
         <input type="text" class="form-control" name="phone" value="{{ $master->balanceFloat}}" readonly>
 
       </div>
@@ -140,8 +140,8 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div class="input-group input-group-outline is-valid my-3">
-        <label class="form-label">Amount</label>
+    <div class="custom-form-group">        
+      <label class="form-label">Amount</label>
         <input type="text" class="form-control" name="amount" required>
       </div>
       @error('amount')
@@ -149,8 +149,7 @@
       @enderror
     </div>
     <div class="col-md-6">
-      <div class="input-group input-group-outline is-valid my-3">
-        <label class="form-label">Addition Note (optional)</label>
+    <div class="custom-form-group">        <label class="form-label">Addition Note (optional)</label>
         <input type="text" class="form-control" name="note">
 
       </div>

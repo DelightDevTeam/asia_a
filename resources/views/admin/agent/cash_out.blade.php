@@ -116,7 +116,7 @@
 
           <div class="row">
             <div class="col-md-6">
-              <div class="input-group input-group-outline is-valid my-3">
+            <div class="custom-form-group">
                 <label class="form-label"> Name</label>
                 <input type="text" class="form-control" name="name" value="{{ $agent->name }}" readonly>
 
@@ -126,7 +126,7 @@
               @enderror
             </div>
             <div class="col-md-6">
-              <div class="input-group input-group-outline is-valid my-3">
+            <div class="custom-form-group">
                 <label class="form-label">Current Balance</label>
                 <input type="text" class="form-control" name="phone" value="{{ $agent->balanceFloat}}" readonly>
 
@@ -140,7 +140,7 @@
 
           <div class="row">
             <div class="col-md-6">
-              <div class="input-group input-group-outline is-valid my-3">
+            <div class="custom-form-group">
                 <label class="form-label">Amount</label>
                 <input type="text" class="form-control" name="amount" required>
               </div>
@@ -149,7 +149,7 @@
               @enderror
             </div>
             <div class="col-md-6">
-              <div class="input-group input-group-outline is-valid my-3">
+            <div class="custom-form-group">
                 <label class="form-label">Addition Note (optional)</label>
                 <input type="text" class="form-control" name="note">
 
@@ -162,7 +162,7 @@
           {{-- submit button --}}
           <div class="row">
             <div class="col-md-12">
-              <div class="input-group input-group-outline is-valid my-3">
+            <div class="custom-form-group">
                 <button type="submit" class="btn btn-primary">confirm</button>
               </div>
             </div>

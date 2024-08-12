@@ -94,6 +94,13 @@ class PaymentTypeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $payment = PaymentType::find($id);
+
+        if($payment)
+        {
+            $payment->delete();
+        }
+        return redirect()->back();
+
     }
 }
