@@ -83,7 +83,7 @@
             @csrf
             @method('PUT')
             <div class="custom-form-group">
-              <label for="title">Master Name <span class="text-danger">*</span></label>
+              <label for="title">MasterId <span class="text-danger">*</span></label>
               <input type="text"  name="name" class="form-control" value="{{$master->user_name}}" readonly>
               @error('name')
               <span class="text-danger d-block">*{{ $message }}</span>

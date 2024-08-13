@@ -21,8 +21,6 @@ class DepositController extends Controller
             $inputs = $request->validated();
             $player = Auth::user();
 
-            if($request->amount > $player->balance)
-
             $deposit = DepositRequest::create(array_merge(
                 $inputs,
                 [

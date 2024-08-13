@@ -21,7 +21,7 @@
       <div class="card-header pb-0">
         <div class="d-lg-flex">
           <div>
-            <h5 class="mb-0">Master List Dashboards</h5>
+            <h5 class="mb-0">Master List</h5>
 
           </div>
           <div class="ms-auto my-auto mt-lg-0 mt-4">
@@ -61,7 +61,7 @@
               <small class="badge bg-gradient-{{ $user->status == 1 ? 'success' : 'danger' }}">{{ $user->status == 1 ? "active" : "inactive" }}</small>
             
               </td>
-              <td>{{ number_format($user->balanceFloat,2) }} MMK</td>
+              <td>{{ number_format($user->balanceFloat,2) }} </td>
 
               <td>
                 @if ($user->status == 1)

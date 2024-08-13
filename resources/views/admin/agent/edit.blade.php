@@ -97,7 +97,7 @@
               @enderror
             </div>
             <div class="custom-form-group">
-              <label for="title">Phone No</label>
+              <label for="title">Phone No<span class="text-danger">*</span></label>
               <input type="text"  name="phone" class="form-control" value="{{$agent->phone}}">
               @error('phone')
               <span class="text-danger d-block">*{{ $message }}</span>

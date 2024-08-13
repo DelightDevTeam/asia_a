@@ -45,6 +45,7 @@
             </tr>
           </thead>
           <tbody>
+            @if($text)
             <tr>
               <td class="text-sm font-weight-normal">{{ $text->id }}</td>
               <td>{{ $text->text }}</td>
@@ -63,6 +64,7 @@
                 </form>
               </td>
             </tr>
+            @endif
           </tbody>
         </table>
       </div>

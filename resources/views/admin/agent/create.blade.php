@@ -130,13 +130,13 @@
             </div>
             <div class="custom-form-group">
               <label for="title">Password <span class="text-danger">*</span></label>
-              <input type="text"  name="password" class="form-control" value="{{old('password')}}" placeholder="6-20 characters without spacing">
+              <input type="text"  name="password" class="form-control" value="{{old('password')}}">
               @error('password')
               <span class="text-danger d-block">*{{ $message }}</span>
               @enderror
             </div>
             <div class="custom-form-group">
-              <label for="title">Phone No</label>
+              <label for="title">Phone No<span class="text-danger">*</span></label>
               <input type="text"  name="phone" class="form-control" value="{{old('phone')}}" placeholder="Enter Phone Number">
               @error('phone')
               <span class="text-danger d-block">*{{ $message }}</span>
@@ -154,21 +154,6 @@
               <span class="text-danger d-block">*{{ $message }}</span>
               @enderror
             </div>
-            {{-- active and inactive with dropdown --}} 
-            <div class="custom-form-group">
-            <label for="title">Status <span class="text-danger">*</span></label>
-            <div class="custom-select-wrapper">
-                <select name="status" class="form-control custom-select">
-                    <option value="1">Active</option>
-                    <option value="0">Inactive</option>
-                </select>
-            </div>
-            @error('status')
-            <span class="text-danger d-block">*{{ $message }}</span>
-            @enderror
-          </div>
-
-           
             <div class="custom-form-group">
               <button class="btn btn-info" type="button" id="resetFormButton">Cancel</button>
 

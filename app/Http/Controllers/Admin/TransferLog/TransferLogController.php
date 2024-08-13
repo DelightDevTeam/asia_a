@@ -3,12 +3,9 @@
 namespace App\Http\Controllers\Admin\TransferLog;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\TransferLog;
-use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class TransferLogController extends Controller
 {

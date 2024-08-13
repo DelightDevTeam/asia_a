@@ -8,7 +8,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\PlayerRequest;
 use App\Http\Requests\TransferLogRequest;
 use App\Models\Admin\Bank;
+use App\Models\PaymentType;
 use App\Models\User;
+use App\Models\UserPayment;
 use App\Services\WalletService;
 use Exception;
 use Illuminate\Http\Request;
@@ -56,9 +58,9 @@ class PlayerController extends Controller
             '403 Forbidden |You cannot  Access this page because you do not have permission'
         );
         $player_name = $this->generateRandomString();
-        $banks = Bank::all();
-
-        return view('admin.player.create', compact('player_name', 'banks'));
+        $paymentTypes = PaymentType::all();
+   
+        return view('admin.player.create', compact('player_name', 'paymentTypes'));
     }
 
     /**

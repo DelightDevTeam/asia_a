@@ -21,7 +21,7 @@
       <div class="card-header pb-0">
         <div class="d-lg-flex">
           <div>
-            <h5 class="mb-0">Agent List Dashboards</h5>
+            <h5 class="mb-0">Agent List</h5>
 
           </div>
           <div class="ms-auto my-auto mt-lg-0 mt-4">
@@ -44,8 +44,7 @@
             <th>Action</th>
             <th>Transfer</th>
           </thead>
-          <tbody>\
-            {{-- kzt --}}
+          <tbody>
             @if(isset($users))
             @if(count($users)>0)
             @foreach ($users as $user)
@@ -61,7 +60,7 @@
               <small class="badge bg-gradient-{{ $user->status == 1 ? 'success' : ($user->status == 2 ? 'danger' : 'warning') }}">{{ $user->status == 1 ? "active" : ($user->status == 2 ? "inactive" : "pending") }}</small>
             
               </td>
-              <td>{{ number_format($user->balanceFloat,2) }} MMK</td>
+              <td>{{ number_format($user->balanceFloat,2) }} </td>
 
               <td>
                 @if ($user->status == 2)
